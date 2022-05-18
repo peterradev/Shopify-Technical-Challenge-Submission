@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{ 
+  text-align: center;
+}
+
+h1{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  align-self: center;
+  
+}
+.products{
+  display: grid;
+  justify-items: center;
+}
+
+.product {
+  justify-content: center;
+  align-content: center;
+  width: 105px;
+  height: 75px;
+  display: flex;
+  /* margin: auto 0; */
+  /* padding: 50px 0;   */
+  align-items: center;
+}
+
+.product p {
+  padding: .6rem .5rem;
+}
+
+
+.form-box{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 300px;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+ input{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  text-align: center;
+  padding: 1rem 0;
+  margin: 5px;
+}
+
+button {
+  text-align: center;
+  width: 125px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: .80rem;
+}
+
+.return-item{
+  margin: 0 auto;
+}
+
+button.visibility{
+  background-color: #5CAA83;
+}
+
+button.posting{
+  background-color: #5c9caa;
+}
+
+.delete-items{
+  padding: 2rem;
+}

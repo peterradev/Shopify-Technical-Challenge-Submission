@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Backend Intern Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Shopify Backend Intern Challenge</h1>
+
+  <button class="visibility">Show All Products</button>
+
+  <div class="form-input">
+    <form action="" id="form-box" class="form-box">
+      <input type="text" placeholder="Product" id="product">
+      <input type="number" placeholder="Amount" id="amount" >
+      <button class="posting" type="submit">Add Product</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <h1>Searching for a single inventory item</h1>
+  <div class="products visible"> 
+  </div>
+  <div class="single">
+    <form action="" id="single-search">
+      <input id="single-product"type="text" placeholder="Product">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="delete-items">
+    <h1>Delete a whole item</h1>
+    <form action="" id="delete-item">
+      <input type="text" id="item-tbd" placeholder="Product">
+      <button id="erase"type="submit">Delete</button>
+    </form>
+    <h1>Delete just a select amount from item</h1>
+    <form action="" id="subtract-form">
+      <input type="text" id="subtract-product" placeholder="Product">
+      <input type="number" id="subtract-amount" placeholder="Amount">
+      <button type="submit">Subtract</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="shipments">
+    <h1>Create a Shipment</h1>
+    <form action="" id="shipment-form">
+      
+      <button type="submit" id="send-shipment">Send off</button>
+    </form>
+  </div>
+
+
+  <script src="./index.js"></script>
+</body>
+</html>
