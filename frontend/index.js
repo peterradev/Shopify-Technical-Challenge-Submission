@@ -246,23 +246,48 @@ const addCheckBox = async () => {
   console.log(data[0].product)
   let html = data.map(product => {
     return ` 
-            <input type="checkbox" name="inventory" value=${product.product} id=${product.product} >
-            <label for=${product.product}> ${product.product}</label>
-            <input type="number" name=${product.product} placeholder="amount"id="">
+            <input type="checkbox" name="inventory" value="${product.product}"  >
+            <label for="${product.product}"> ${product.product}</label>
+            <input type="number" name="${product.product}" placeholder="amount" id="${product.product}">
             <br>
             `;
-  }).join("\n");
-  document.querySelector('#send-shipment').insertAdjacentHTML("beforebegin", html)  
+          }).join("\n");
+          document.querySelector('#send-shipment').insertAdjacentHTML("beforebegin", html)  
+}
+
+const sendShipment = mapped => {
+  console.log(mapped.size);
+  // for(let i=0; i<mapped.size; i++){
+  //   console.log(mapped[i].key);
+  //   // subtractAmount(mapped[i].key)
+  // }
+  const iterator = mapped.keys()
+  const iterator2 = mapped.values()
+  for(let i=0; i<mapped.size; i++){
+    subtractAmount(iterator.next().value, iterator2.next().value);
+    // console.log(iterator.next().value +': '+iterator2.next().value);
+  }
+
 }
 
 const getCheckBoxes = checkboxes => {
-  let checkedBox = []
+  let checked = []
+  let input = [];
+  let mapped = new Map();
+
   for(let i=0; i<checkboxes.length; i++){
     if(checkboxes[i].checked){
-      console.log(checkboxes[i].value);
+      // console.log(checkboxes[i].value);
+      checked.push(checkboxes[i].value);
+      const getInput = document.getElementById(checkboxes[i].value)
+      input.push(getInput.value)
+
+      mapped.set(checkboxes[i].value, getInput.value);
     }
   }
+  sendShipment(mapped);
 }
+
 
 const sendOff = e => {
   e.preventDefault();
@@ -271,6 +296,6 @@ const sendOff = e => {
 
 addCheckBox();
 const checkboxes = document.getElementsByName('inventory');
-
 const forms = document.getElementById('shipment-form')
 forms.addEventListener('submit', sendOff);
+

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const cors = require('cors');
 const app = express();
+const path = require('path');
 require('colors')
 
 app.use(cors())
@@ -20,11 +21,17 @@ db.once('open', () => {
 })
 
 
+const publicDir = path.join(__dirname, '../frontend')
 
-// Routes
+// Routes\
+app.use(express.static(publicDir));
+
+
 app.get("/", (req, res) => {
-  res.send("hello World");
+  // res.sendFile('index.html')
+  res.send("hello")
 })
+
 
 const productRoute = require('./routes/Products');
 
